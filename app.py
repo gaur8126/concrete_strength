@@ -2,14 +2,13 @@
 from src.concrete_strength.exception import CustomException
 from src.concrete_strength.logger import logging
 import sys
-
-
+from src.concrete_strength.components.data_ingestion import DataIngestion
+from src.concrete_strength.components.data_transform import DataTransformer
 
 
 if __name__ == "__main__":
-    logging.info("Execusion has started")
-    try :
-        1/0
-    except Exception as e:
-        logging.info("Custom exception")
-        raise CustomException(e,sys)
+    data= DataIngestion()
+    train_path,test_path = data.initiate_data_ingestion()
+
+    transform_data = DataTransformer()
+    transform_data.initiate_data_transformation(train_path,test_path)
