@@ -33,13 +33,18 @@ This project aims to predict **the compressive strength of concrete** based on v
    ```bash
    cd concrete_strength
    ```
+
+3. Create virtual environment
+   ```bash
+   conda create -p venv python==3.10 -y
+   ```
 3. Install dependencies:
    ```bash
    pip install -r requirements.txt
    ```
 4. Run the script:
    ```bash
-   app.py
+   python app.py
 
 # Model Performance 📈
 - **Achieved Accuracy**: **94.96%**
